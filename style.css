@@ -6,44 +6,44 @@
 
 body{
     font-family: 'Lato', sans-serif;
-    margin: 0;
-    background-color: #333;
+    margin: 0; /* retirado a margem para todo o body */
+    background-color: #333; /* cor do fundo do body mas também do menu */
     overflow-x: hidden; /* Scroll apenas na vertical */
 }
 
 .container {
-    background-color: #fafafa;
-    transform-origin: top left;
-    transition: transform 0.5s linear;
+    background-color: #fafafa; /* cor do fundo da div que contém o texo */
+    transform-origin: top left; /* Muda o ponto de rotacionar para o topo a esquerda (onde vai ficar o menu) */
+    transition: transform 0.5s linear; /* para que o efeito de rotacionar fique mais suave */
     width: 100vw;
     min-height: 100vh;
-    padding: 50px;
+    padding: 50px; /* Separando o texo das bordas em 50px */
 }
 
 .container.show-nav {
-    transform: rotate(-20deg);
+    transform: rotate(-20deg); /* quando o container receber a class show-nav ele vai rotacionar 20deg */
 }
 
 .circle-container {
-    position: fixed;
+    position: fixed; /* para ficar visivel o tempo todo no topo da página */
     top: -100px;
     left: -100px;
 }
 
 .circle {
-    background-color: #ff7979;
+    background-color: #ff7979; /* cor do fundo do menu */
     height: 200px;
     width: 200px;
-    border-radius: 50%;
-    position: relative;
-    transition: transform 0.5s linear;
+    border-radius: 50%; /* colocando o quadrado em circulo removendo as bordas em 50% */
+    position: relative; /* para colocar os botoes como absolute */
+    transition: transform 0.5s linear; /* a mesma transicao do container */
 }
 
-.container.show-nav .circle {
+.container.show-nav .circle { /*rotacionando o circulo quando container tem a class show-nav */
     transform: rotate(-70deg);
 }
 
-.circle button{
+.circle button{ /*estilo dos butoes */
     cursor: pointer;
     position: absolute;
     top: 50%;
@@ -63,18 +63,18 @@ body{
     left: 60%;
 }
 
-.circle button#close {
+.circle button#close { /* colocando o butão pra fora da tela */
     top: 60%;
     transform: rotate(90deg);
     transform-origin: top left;
 } 
 
-.container.show-nav + nav li {
+.container.show-nav + nav li { /* quando container tiver show-nav, o nav aparece e tem um delay */
     transform: translateX(0);
     transition-delay: 0.3s;
 }
 
-nav {
+nav { /*colocando o nav na posicao em baixo e a esquerda */
     position: fixed;
     bottom: 40px;
     left: 0;
@@ -82,7 +82,7 @@ nav {
 }
 
 nav ul {
-    list-style-type: none;
+    list-style-type: none; /* tirando as bolinhas da lista */
     padding-left: 30px;
 
 }
@@ -90,9 +90,9 @@ nav ul {
 nav ul li {
     text-transform: uppercase;
     color: #fff;
-    margin: 40px 0;
-    transform: translateX(-100%);
-    transition: transform 0.4s ease-in;
+    margin: 40px 0; /* separando as li */
+    transform: translateX(-100%); /* tirando os li um pouco da tela */  
+    transition: transform 0.4s ease-in;  
 }
 nav ul li i {
     font-size: 20px;
@@ -100,15 +100,15 @@ nav ul li i {
 }
 
 nav ul li + li {
-    margin-left: 15px;
-    transform: translateX(-150%);
+    margin-left: 15px; /* separando os li */
+    transform: translateX(-150%); /* tirando os li um pouco da tela */ 
 }
 nav ul li + li + li {
-    margin-left: 30px;
-    transform: translateX(-200%);
+    margin-left: 30px; /* separando os li */
+    transform: translateX(-200%); /* tirando os li um pouco da tela */ 
 }
 
-.content img {
+.content img { /* mudando a imagem pra caber 100% dentro do content */
     max-width: 100%;
 }
 
@@ -128,5 +128,5 @@ nav ul li + li + li {
 
 .content p {
     color: #333;
-    line-height: 1.5;
+    line-height: 1.5; /* aumentando a distancia da linhas */
 }
